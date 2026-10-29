@@ -33,14 +33,14 @@ void passo_gradiente(int quantidade[], float valor_real[], int n, float *peso, f
 }
 int main(){
     int n = 2;
-    float valor_real [2] = {2,4};
+    float valor_real [2] = {3,5};
     int quantidade [2] = {1,2};
     float peso = 0.0;
-    float taxa_aprendizado = 0.1;
+    float taxa_aprendizado = 0.25;
     float b = 0.0;
     for (int epoca = 0; epoca <= 1000; epoca++)
     {
-        if (epoca % 100 == 0)
+        if (epoca < 15 || epoca % 100 == 0)
         {
             printf("Época %d | MSE: %.4f | peso: %.3f | b: %.3f\n", epoca, calcular_mse(quantidade, valor_real, n, peso, b), peso, b);
         }
